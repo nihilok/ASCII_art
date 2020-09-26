@@ -30,20 +30,14 @@ def date_stamp():
 # c:\Users\Michael\Desktop\illum.jpg
 
 
-def main(new_width=100):
-    path = input('File: ')
+def main(path, new_width=100):
     try:
         image = PIL.Image.open(path)
     except:
-        if not os.path.exists(path):
-            return path, ' is not a valid pathname to an image.'
+        return path, ' is not a valid pathname to an image.'
 
     new_image_data = pixels_to_ascii(greyify(resize_image(image)))
     pixel_count = len(new_image_data)
     ascii_image = '\n'.join(new_image_data[i:(i + new_width)] for i in range(0, pixel_count, new_width))
-    print(ascii_image)
-    with open(f'ascii_image_{date_stamp()}.txt', 'w') as f:
-        f.write(ascii_image)
 
-
-main()
+    return ascii_image
