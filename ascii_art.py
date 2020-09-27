@@ -45,5 +45,6 @@ def main(path, desired_height):
 
 
 if __name__ == "__main__":
-  path = input("Choose an image (filepath): ")
-  main(path)
+    path = input("Choose an image (filepath): ")
+    desired_height = int(input("Desired height in lines (e.g. 90): "))
+    print(main(path, desired_height))
