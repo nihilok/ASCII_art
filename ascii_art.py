@@ -43,4 +43,5 @@ def main(path, new_width=100):
     return ascii_image
 
 if __name__ == "__main__":
-  main()
+  path = input("Choose an image (filepath): ")
+  main(path)
