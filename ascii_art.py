@@ -41,3 +41,6 @@ def main(path, new_width=100):
     ascii_image = '\n'.join(new_image_data[i:(i + new_width)] for i in range(0, pixel_count, new_width))
 
     return ascii_image
+
+if __name__ == "__main__":
+  main()
